@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/projekt-react-webshop/static/css/main.cd82eb1b.css",
-    "main.js": "/projekt-react-webshop/static/js/main.96a95ad9.js",
+    "main.css": "/projekt-react-webshop/static/css/main.1ea62c23.css",
+    "main.js": "/projekt-react-webshop/static/js/main.18c855e4.js",
     "static/js/453.8b5266c1.chunk.js": "/projekt-react-webshop/static/js/453.8b5266c1.chunk.js",
     "index.html": "/projekt-react-webshop/index.html",
-    "main.cd82eb1b.css.map": "/projekt-react-webshop/static/css/main.cd82eb1b.css.map",
-    "main.96a95ad9.js.map": "/projekt-react-webshop/static/js/main.96a95ad9.js.map",
+    "main.1ea62c23.css.map": "/projekt-react-webshop/static/css/main.1ea62c23.css.map",
+    "main.18c855e4.js.map": "/projekt-react-webshop/static/js/main.18c855e4.js.map",
     "453.8b5266c1.chunk.js.map": "/projekt-react-webshop/static/js/453.8b5266c1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cd82eb1b.css",
-    "static/js/main.96a95ad9.js"
+    "static/css/main.1ea62c23.css",
+    "static/js/main.18c855e4.js"
   ]
 }
