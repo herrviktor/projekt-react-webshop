@@ -5,22 +5,33 @@ import './komponenter/app-container.css';
 import Nav from './komponenter/nav.jsx';
 import Footer from './komponenter/footer.jsx';
 import Main from './komponenter/main.jsx';
-import CheckoutProducts from './komponenter/checkout-products.jsx';
-import CheckoutForm from './komponenter/checkout-form.jsx';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ProductGrid from './komponenter/product-grid.jsx';
+import ProductView from './komponenter/product-view.jsx';
+import { ProductProvider } from './komponenter/product-context.jsx'; // Import ProductProvider from './komponenter/product-context.jsx';
+
+
+
 
 function App() {
   return (
-    <div className="App-container">
-      <Container>
-        <Header />
-        <Nav />
-        <Main>
-          <CheckoutProducts />
-          <CheckoutForm />
-        </Main>
-        <Footer />
-      </Container>
-    </div>
+    <Router>
+        <div className="App-container">
+            <Container>
+              <Header />
+              <Nav />
+              <Main>
+              <ProductProvider>
+              <Routes>
+                <Route path="/projekt-react-webshop" element={<ProductGrid />} />
+                <Route  path="/product-view/:id" element={<ProductView />} />
+              </Routes>
+              </ProductProvider>
+              </Main>
+              <Footer />
+            </Container>
+        </div>
+    </Router>
   );
 }
 
