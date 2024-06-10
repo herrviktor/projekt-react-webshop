@@ -9,7 +9,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ProductGrid from './komponenter/product-grid.jsx';
 import ProductView from './komponenter/product-view.jsx';
 import { ProductProvider } from './komponenter/product-context.jsx'; // Import ProductProvider from './komponenter/product-context.jsx';
-
+import Checkout from './komponenter/checkout.jsx';
+import Cart from './komponenter/cart.jsx';
 
 
 
@@ -22,10 +23,12 @@ function App() {
               <Nav />
               <Main>
               <ProductProvider>
-              <Routes>
-                <Route path="/projekt-react-webshop" element={<ProductGrid />} />
-                <Route  path="/product-view/:id" element={<ProductView />} />
-              </Routes>
+                <Routes>
+                  <Route path="/projekt-react-webshop" element={<ProductGrid />} />
+                  <Route  path="/product-view/:id" element={<ProductView />} />
+                  <Route path="/checkout" element={<Checkout />} />
+                  <Route path="/cart" element={<Cart />} />
+                </Routes>
               </ProductProvider>
               </Main>
               <Footer />

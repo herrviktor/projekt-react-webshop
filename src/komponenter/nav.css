@@ -5,13 +5,11 @@ svg.logo-mini {
     width: 20px;
     height: 20px;
     fill: var(#770);
-    stroke: var(--cWhite);
     stroke-width: 1px;
 }
 
 text.logo-text {
     stroke-width: 0.25;
-    stroke: var(--cWhite);
     font-size: 5px;
 }
 
@@ -31,20 +29,15 @@ nav.top-nav {
 }
 
 
-a.top-link {
+div.top-link {
     margin-left: 5px;
     border: 2px solid black;
     padding: 1px 13px;
     border-radius: 15px;
 }
 
-nav.top-nav div:first-child {
-    margin-right: auto;
-}
-
-a.checkout {
+.link {
     text-decoration: none;
-    color: var(--cWhite);
 }
 
 
@@ -53,16 +46,4 @@ span.cart {
     display: inline-block;
     font-size: 1.2rem;
     padding-left: 3px;
-}
-
-
-nav a.link {               
-    display: block;
-    text-decoration: none;
-    background-color: var(--cBlue);
-    color: var(--cWhite);
-}
-
-nav a.link:hover {
-    background-color: var(--cRed);
 }

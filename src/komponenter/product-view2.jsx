@@ -1,17 +1,17 @@
 import React, { useContext, useState } from 'react';
 import { ProductContext } from '../komponenter/product-context';
 import { useParams } from 'react-router-dom';
-
+import CartWindow from './cart';
+import Nav from './nav';
 
 const ProductView = () => {
   const { products } = useContext(ProductContext);
   const { id } = useParams();
   const [quantity, setQuantity] = useState(0);
+  const [showCart, setShowCart] = useState(false);
+  const [cartItems, setCartItems] = useState([]);
 
-  //p.id === parseInt(id, 10));p.id === parseInt(id, 10));
-  const product = products.find((p) => {
-    return p.id === parseInt(id, 10);
-  });
+  const product = products.find((p) => p.id === parseInt(id, 10));
 
   const handleQuantityChange = (event) => {
     const value = parseInt(event.target.value, 10);
@@ -20,11 +20,11 @@ const ProductView = () => {
     }
   };
 
-  /*const handleAddToCartClick = () => {
-    onAddToCart(product, quantity);
-  };*/
-
-
+  const handleAddToCart = () => {
+    const cartItem = { ...product, quantity };
+    setCartItems((prevCartItems) => [...prevCartItems, cartItem]);
+    setShowCart(true);
+  };
 
   return (
     <div className="product-view">
@@ -42,14 +42,15 @@ const ProductView = () => {
             value={quantity}
             onChange={handleQuantityChange}
           />
-          <button>Add to cart</button>
+          <button onClick={handleAddToCart}>Add to cart</button>
         </>
       ) : (
         <p>Product not found</p>
       )}
+      {showCart && <CartWindow cartItems={cartItems} onClose={() => setShowCart(false)} />}
+      <Nav cartItems={cartItems} setShowCart={setShowCart} />
     </div>
   );
 };
 
 export default ProductView;
-export const handleAddToCart = ProductView.handleAddToCart;
