@@ -11,3 +11,9 @@ div.product-site {
     margin: 10px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
+
+.product-item {
+    text-decoration: none;
+    color: black;
+    text-align: center;
+}

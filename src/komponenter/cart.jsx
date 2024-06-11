@@ -1,15 +1,31 @@
 import { useContext } from 'react';
 import { ProductContext } from './product-context';
 import ProductView from './product-view';
+import { Link } from 'react-router-dom';
+import './cart.css';
 const Cart = () => {
     const { products } = useContext(ProductContext);
 
   const handleAddToCart = (product, quantity) => {
-    // Logic to add the product to the cart
-  };
+    let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+    // Check if the product already exists in the cart
+    const existingProductIndex = cartItems.findIndex((item) => item.id === product.id);
+
+    if (existingProductIndex !== -1) {
+        // If the product already exists, update the quantity
+        cartItems[existingProductIndex].quantity += quantity;
+    } else {
+        // If the product doesn't exist, add it to the cart
+        cartItems.push({ ...product, quantity });
+    }
+
+    // Update the cart items in local storage
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+};
 
     return (
-        <div className="cart">
+        <div className="div-cart">
             <h2>Cart</h2>
             <ul>
                 {products.map((item) => (
@@ -24,9 +40,9 @@ const Cart = () => {
                     </li>
                 ))}
             </ul>
-            <button>Go to checkout</button>
-            <button>Clear cart</button>
-            <button>Continue shopping</button>
+            <Link to="/checkout"><button className='cart-button'>Go to checkout</button></Link>
+            <Link><button className='cart-button'>Clear cart</button></Link>
+            <Link to="/projekt-react-webshop"><button className='cart-button'>Continue shopping</button></Link>
         </div>
     );
 };

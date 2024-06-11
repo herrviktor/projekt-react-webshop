@@ -1,6 +1,8 @@
+import './main.css'
+
 const Main = ({ children }) => {
     return (
-        <main>
+        <main className="main">
             {children}
         </main>
     )

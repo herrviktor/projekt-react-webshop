@@ -20,11 +20,25 @@ const ProductView = () => {
     }
   };
 
-  /*const handleAddToCartClick = () => {
-    onAddToCart(product, quantity);
-  };*/
+  const handleAddToCartClick = () => {
+    handleAddToCart(product, quantity);
+  };
 
+const handleAddToCart = (selectedProduct, quantity) => {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
+    const existingItemIndex = cart.findIndex((item) => item.id === selectedProduct.id);
+
+    if (existingItemIndex !== -1) {
+      // Item already exists in the cart, update the quantity
+      cart[existingItemIndex].quantity += quantity;
+    } else {
+      // Item doesn't exist in the cart, add a new item
+      cart.push({ ...selectedProduct, quantity });
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+  };
 
   return (
     <div className="product-view">
@@ -42,7 +56,7 @@ const ProductView = () => {
             value={quantity}
             onChange={handleQuantityChange}
           />
-          <button>Add to cart</button>
+          <button onClick={handleAddToCartClick}>Add to cart</button>
         </>
       ) : (
         <p>Product not found</p>
@@ -52,4 +66,4 @@ const ProductView = () => {
 };
 
 export default ProductView;
-export const handleAddToCart = ProductView.handleAddToCart;
+export const handleAddToCart = ProductView.onAddToCart;

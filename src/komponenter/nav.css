@@ -4,13 +4,7 @@ svg.logo-mini {
     top: -4px;
     width: 20px;
     height: 20px;
-    fill: var(#770);
     stroke-width: 1px;
-}
-
-text.logo-text {
-    stroke-width: 0.25;
-    font-size: 5px;
 }
 
 
@@ -20,7 +14,7 @@ svg.svg-cart {
 
 
 nav.top-nav {
-    background-color: var(--cBlack);
+    background: linear-gradient(135deg, #fff 0%, #111 25%, #eee 50%, #111 75%, #fff 100%); 
     display: flex;
     justify-content: space-between;
     align-items: center;
