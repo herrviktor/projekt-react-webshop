@@ -6,22 +6,22 @@ import './cart.css';
 const Cart = () => {
     const { products } = useContext(ProductContext);
 
-  const handleAddToCart = (product, quantity) => {
-    let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+    const handleAddToCart = (product, quantity) => {
+        let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
 
-    // Check if the product already exists in the cart
-    const existingProductIndex = cartItems.findIndex((item) => item.id === product.id);
+        // Check if the product already exists in the cart
+        const existingProductIndex = cartItems.findIndex((item) => item.id === product.id);
 
-    if (existingProductIndex !== -1) {
-        // If the product already exists, update the quantity
-        cartItems[existingProductIndex].quantity += quantity;
-    } else {
-        // If the product doesn't exist, add it to the cart
-        cartItems.push({ ...product, quantity });
-    }
+        if (existingProductIndex !== -1) {
+            // If the product already exists, update the quantity
+            cartItems[existingProductIndex].quantity += quantity;
+        } else {
+            // If the product doesn't exist, add it to the cart
+            cartItems.push({ ...product, quantity });
+        }
 
-    // Update the cart items in local storage
-    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        // Update the cart items in local storage
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
 };
 
     return (

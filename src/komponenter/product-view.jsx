@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { ProductContext } from '../komponenter/product-context';
 import { useParams } from 'react-router-dom';
+import './product-view.css';
 
 
 const ProductView = () => {

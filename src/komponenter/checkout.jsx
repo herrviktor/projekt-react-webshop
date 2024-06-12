@@ -1,12 +1,13 @@
+import './checkout.css';
 const Checkout = ({ children }) => {
     return (
         <>
-            <section className="checkout-products">
+            <section className="checkout-products checkout-section">
                 <h3 id="shopping-title">Du ska beställa följande:</h3>
                 <ul id="shopping-list">{children}</ul>
                 <span id="shopping-total"></span>
             </section>
-            <section class="payment">
+            <section class="payment checkout-section">
                 <h3>För beställning var vänlig fyll i dina uppgifter nedan:</h3>
                 <form id="checkout-form">
                     <div>
