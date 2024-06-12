@@ -47,10 +47,10 @@ const Checkout = ({ children }) => {
                         <label for="EMail">E-post:</label>
                         <input type="email" id="EMail" name="EMail" placeholder="E-post" pattern="[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" />
                     </div>
-                    <div>
-                        <input type="submit" value="Beställ" id="submit" />
-                    </div>
                 </form>
+                <div>
+                    <button>Beställ</button>
+                </div>
             </section>
         </>
     )
