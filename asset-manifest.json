@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/projekt-react-webshop/static/css/main.f466e040.css",
-    "main.js": "/projekt-react-webshop/static/js/main.31510158.js",
+    "main.js": "/projekt-react-webshop/static/js/main.998d29ff.js",
     "static/js/453.8b5266c1.chunk.js": "/projekt-react-webshop/static/js/453.8b5266c1.chunk.js",
     "index.html": "/projekt-react-webshop/index.html",
     "main.f466e040.css.map": "/projekt-react-webshop/static/css/main.f466e040.css.map",
-    "main.31510158.js.map": "/projekt-react-webshop/static/js/main.31510158.js.map",
+    "main.998d29ff.js.map": "/projekt-react-webshop/static/js/main.998d29ff.js.map",
     "453.8b5266c1.chunk.js.map": "/projekt-react-webshop/static/js/453.8b5266c1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f466e040.css",
-    "static/js/main.31510158.js"
+    "static/js/main.998d29ff.js"
   ]
 }
