@@ -18,20 +18,19 @@ function App() {
   return (
     <Router>
         <div className="App-container">
-            <Container>
-              <Header />
-              <Nav />
-              <Main>
-              <ProductProvider>
-                <Routes>
-                  <Route path="/projekt-react-webshop" element={<ProductGrid />} />
-                  <Route  path="/product-view/:id" element={<ProductView />} />
-                  <Route path="/checkout" element={<Checkout />} />
-                  <Route path="/cart" element={<Cart />} />
-                </Routes>
+            <Container><ProductProvider>
+                <Header />
+                <Nav />
+                <Main>
+                  <Routes>
+                    <Route path="/projekt-react-webshop" element={<ProductGrid />} />
+                    <Route  path="/product-view/:id" element={<ProductView />} />
+                    <Route path="/checkout" element={<Checkout />} />
+                    <Route path="/cart" element={<Cart />} />
+                  </Routes>
+                </Main>
+                <Footer />
               </ProductProvider>
-              </Main>
-              <Footer />
             </Container>
         </div>
     </Router>

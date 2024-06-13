@@ -5,7 +5,7 @@ import './product-view.css';
 
 
 const ProductView = () => {
-  const { products } = useContext(ProductContext);
+  const { products, addToCart, removeFromCart } = useContext(ProductContext);
   const { id } = useParams();
   const [quantity, setQuantity] = useState(0);
 
@@ -21,11 +21,15 @@ const ProductView = () => {
     }
   };
 
-  const handleAddToCartClick = () => {
-    handleAddToCart(product, quantity);
+  const handleAddToCart = (product) => {
+    addToCart(product);
   };
 
-const handleAddToCart = (selectedProduct, quantity) => {
+  const handleRemoveFromCart = (productId) => {
+    removeFromCart(productId);
+  };
+
+/*const handleAddToCart = (selectedProduct, quantity) => {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
     const existingItemIndex = cart.findIndex((item) => item.id === selectedProduct.id);
@@ -40,7 +44,10 @@ const handleAddToCart = (selectedProduct, quantity) => {
 
     localStorage.setItem('cart', JSON.stringify(cart));
   };
-
+  const handleAddToCartClick = () => {
+    handleAddToCart(product, quantity);
+  };*/
+  
   return (
     <div className="product-view">
       {product ? (
@@ -57,7 +64,8 @@ const handleAddToCart = (selectedProduct, quantity) => {
             value={quantity}
             onChange={handleQuantityChange}
           />
-          <button onClick={handleAddToCartClick}>Add to cart</button>
+          <button onClick={handleAddToCart}>Add to cart</button>
+          <button onClick={handleRemoveFromCart}>Remove from cart</button>
         </>
       ) : (
         <p>Product not found</p>
@@ -67,4 +75,5 @@ const handleAddToCart = (selectedProduct, quantity) => {
 };
 
 export default ProductView;
-export const handleAddToCart = ProductView.onAddToCart;
+/*export const handleAddToCart = ProductView.onAddToCart;
+<Cart addToCart={handleAddToCart} removeFromCart={handleRemoveFromCart} />*/

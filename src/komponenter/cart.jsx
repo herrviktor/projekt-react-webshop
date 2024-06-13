@@ -1,10 +1,42 @@
 import { useContext } from 'react';
 import { ProductContext } from './product-context';
-import ProductView from './product-view';
 import { Link } from 'react-router-dom';
 import './cart.css';
 const Cart = () => {
-    const { products } = useContext(ProductContext);
+    const { products, cart, removeFromCart } = useContext(ProductContext);
+
+    const handleRemoveFromCart = (productId) => {
+        removeFromCart(productId);
+    };
+
+
+return (
+    <div className="div-cart">
+      <h2>Cart</h2>
+      <ul>
+        {cart.map((productId) => {
+          const product = products.find((p) => p.id === productId);
+          return (
+            <li key={productId}>
+              {product ? `${product.id} - $${product.price}` : `Product not found (${productId})`}
+              <button onClick={handleRemoveFromCart}>Remove</button>
+            </li>
+          );
+        })}
+      </ul>
+            <Link to="/checkout"><button className='cart-button'>Go to checkout</button></Link>
+            <Link><button className='cart-button'>Clear cart</button></Link>
+            <Link to="/projekt-react-webshop"><button className='cart-button'>Continue shopping</button></Link>
+        </div>
+    );
+};
+
+export default Cart;
+
+/*
+/*const handleAddToCart = (product) => {
+        addToCart(product);
+      };
 
     const handleAddToCart = (product, quantity) => {
         let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
@@ -24,13 +56,8 @@ const Cart = () => {
         localStorage.setItem('cartItems', JSON.stringify(cartItems));
 };
 
-    return (
-        <div className="div-cart">
-            <h2>Cart</h2>
-            <ul>
-                {products.map((item) => (
+{products.map((item) => (
                     <li key={item.id}>
-                        <ProductView product={item} onAddToCart={handleAddToCart} />
                         <img src={item.thumbnail} alt={item.title} />
                         <span>{item.title}</span>
                         <span>Price: {item.price}</span>
@@ -38,13 +65,5 @@ const Cart = () => {
                         <button>Remove</button>
                         <button>Add</button>
                     </li>
-                ))}
-            </ul>
-            <Link to="/checkout"><button className='cart-button'>Go to checkout</button></Link>
-            <Link><button className='cart-button'>Clear cart</button></Link>
-            <Link to="/projekt-react-webshop"><button className='cart-button'>Continue shopping</button></Link>
-        </div>
-    );
-};
-
-export default Cart;
+<ProductView product={item} onAddToCart={handleAddToCart} />*
+*/
