@@ -3,7 +3,7 @@ import './header.css';
             return ( 
                 <header className="header"> 
                     <h1>
-                        TALL & THIN<span>Shirts for men who are tall but not fat</span>
+                        TALL&Cheap<span>Shirts for men who are tall and poor</span>
                     </h1>
                     
                 </header>

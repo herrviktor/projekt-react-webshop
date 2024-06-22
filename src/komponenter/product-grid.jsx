@@ -1,10 +1,10 @@
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { ProductContext } from '../komponenter/product-context';
+import { ProductContext } from './product-context';
 import './product-grid.css';
 
 const ProductGrid = () => {
-  const { products } = useContext(ProductContext);
+  const { products }  = useContext(ProductContext);
 
   return (
     <div className="product-grid">

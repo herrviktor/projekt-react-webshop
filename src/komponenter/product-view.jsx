@@ -1,52 +1,17 @@
-import React, { useContext, useState } from 'react';
-import { ProductContext } from '../komponenter/product-context';
-import { useParams } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { ProductContext } from './product-context';
+import { useParams, Link } from 'react-router-dom';
 import './product-view.css';
 
 
 const ProductView = () => {
-  const { products, addToCart, removeFromCart } = useContext(ProductContext);
-  const { id } = useParams();
-  const [quantity, setQuantity] = useState(0);
+  const { products, addToCart, cart } = useContext(ProductContext);
+  const { Id } = useParams();
 
   //p.id === parseInt(id, 10));p.id === parseInt(id, 10));
   const product = products.find((p) => {
-    return p.id === parseInt(id, 10);
+    return p.id === parseInt(Id, 10);
   });
-
-  const handleQuantityChange = (event) => {
-    const value = parseInt(event.target.value, 10);
-    if (value >= 0) {
-      setQuantity(value);
-    }
-  };
-
-  const handleAddToCart = (product) => {
-    addToCart(product);
-  };
-
-  const handleRemoveFromCart = (productId) => {
-    removeFromCart(productId);
-  };
-
-/*const handleAddToCart = (selectedProduct, quantity) => {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-    const existingItemIndex = cart.findIndex((item) => item.id === selectedProduct.id);
-
-    if (existingItemIndex !== -1) {
-      // Item already exists in the cart, update the quantity
-      cart[existingItemIndex].quantity += quantity;
-    } else {
-      // Item doesn't exist in the cart, add a new item
-      cart.push({ ...selectedProduct, quantity });
-    }
-
-    localStorage.setItem('cart', JSON.stringify(cart));
-  };
-  const handleAddToCartClick = () => {
-    handleAddToCart(product, quantity);
-  };*/
   
   return (
     <div className="product-view">
@@ -56,16 +21,15 @@ const ProductView = () => {
           <h1>{product.title}</h1>
           <p>{product.description}</p>
           <p>Price: {product.price}</p>
-          <p>Quantity: {quantity}</p>
           <label htmlFor="quantity">Quantity:</label>
           <input
             type="number"
             id="quantity"
-            value={quantity}
-            onChange={handleQuantityChange}
+            value=""
+            onChange=""
           />
-          <button onClick={handleAddToCart}>Add to cart</button>
-          <button onClick={handleRemoveFromCart}>Remove from cart</button>
+          <button onClick={() => addToCart(product.id)} className={``} disabled={product.stock < 1 || cart[product.id] >= product.stock}>Add to cart</button>
+          <Link to='/projekt-react-webshop' className=''><button className="">Back to shopping!</button></Link>
         </>
       ) : (
         <p>Product not found</p>
@@ -75,5 +39,3 @@ const ProductView = () => {
 };
 
 export default ProductView;
-/*export const handleAddToCart = ProductView.onAddToCart;
-<Cart addToCart={handleAddToCart} removeFromCart={handleRemoveFromCart} />*/

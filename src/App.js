@@ -11,22 +11,25 @@ import ProductView from './komponenter/product-view.jsx';
 import { ProductProvider } from './komponenter/product-context.jsx'; // Import ProductProvider from './komponenter/product-context.jsx';
 import Checkout from './komponenter/checkout.jsx';
 import Cart from './komponenter/cart.jsx';
+import Receipt from './komponenter/receipt.jsx';
 
 
 
 function App() {
   return (
-    <Router>
+    <Router basename='projekt-react-webshop'>
         <div className="App-container">
             <Container><ProductProvider>
                 <Header />
                 <Nav />
                 <Main>
                   <Routes>
+                    <Route path="/" element={<ProductGrid />} />
                     <Route path="/projekt-react-webshop" element={<ProductGrid />} />
-                    <Route  path="/product-view/:id" element={<ProductView />} />
+                    <Route path="/product-view/:Id" element={<ProductView />} />
                     <Route path="/checkout" element={<Checkout />} />
                     <Route path="/cart" element={<Cart />} />
+                    <Route path="/receipt" element={<Receipt />} />
                   </Routes>
                 </Main>
                 <Footer />
