@@ -7,13 +7,14 @@ const ProductGrid = () => {
   const { products }  = useContext(ProductContext);
 
   return (
-    <div className="product-grid">
+    <div className="grid-products main-flex">
       {products.map((product) => (
-        <Link key={product.id} to={`/product-view/${product.id}`} className="product-item">
-          <div className="product-site">
-            <img src={product.thumbnail} alt={product.title} />
-            <h2>{product.title}</h2>
-            <p>Price: {product.price}</p>
+        <Link key={product.id} to={`/product-view/${product.id}`} className="grid-link">
+          <div className="grid-item">
+            <img src={product.thumbnail} alt={product.title} className="grid-image" />
+            <h2 className="grid-title text-color">{product.title}</h2>
+            <p className="grid-price text-color">Price: {product.price}</p>
+            <button className="grid-button main-button">View Product</button>
           </div>
         </Link>
       ))}

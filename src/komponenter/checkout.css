@@ -1,4 +1,19 @@
+.checkout {
+    flex-direction: column;
+}
+
 .checkout-section {
     padding-bottom: 20px;
     margin-left: 60px;
+}
+
+.checkout-header {
+    font-family: Merisca, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1.5rem;
+    color: var(--priColor);
+    text-shadow: 2px 2px 10px var(--priColor);
+}
+
+.checkout-button {
+    margin-right: 10px;
 }

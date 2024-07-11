@@ -1,7 +1,6 @@
 import './App.css';
 import Header from './komponenter/header.jsx';
 import Container from './komponenter/container.jsx';
-import './komponenter/app-container.css';
 import Nav from './komponenter/nav.jsx';
 import Footer from './komponenter/footer.jsx';
 import Main from './komponenter/main.jsx';
@@ -12,6 +11,8 @@ import { ProductProvider } from './komponenter/product-context.jsx'; // Import P
 import Checkout from './komponenter/checkout.jsx';
 import Cart from './komponenter/cart.jsx';
 import Receipt from './komponenter/receipt.jsx';
+import './komponenter/variables.css'
+import { ThemeProvider } from './komponenter/themes.jsx';
 
 
 
@@ -19,7 +20,7 @@ function App() {
   return (
     <Router basename='projekt-react-webshop'>
         <div className="App-container">
-            <Container><ProductProvider>
+            <Container><ProductProvider><ThemeProvider>
                 <Header />
                 <Nav />
                 <Main>
@@ -32,7 +33,7 @@ function App() {
                     <Route path="/receipt" element={<Receipt />} />
                   </Routes>
                 </Main>
-                <Footer />
+                <Footer /></ThemeProvider>
               </ProductProvider>
             </Container>
         </div>

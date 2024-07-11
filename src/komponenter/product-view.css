@@ -1,3 +1,7 @@
 .product-view {
-    margin-left: 60px;
+    flex-direction: column;
+    width: 50%;
 }
+
+
+

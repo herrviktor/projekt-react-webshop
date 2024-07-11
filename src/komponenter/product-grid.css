@@ -1,19 +1,39 @@
-div.product-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+.grid-image {
+    width: 80%;
+    height: auto;
 }
 
-div.product-site {
-    border: 1px solid #ccc;
+div.grid-item {
+    border: 1px solid var(--priColor);
     border-radius: 5px;
     padding: 10px;
     margin: 10px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    background-color: #ddd;
 }
 
-.product-item {
+div.grid-item:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background-color: #bbb;
+    outline: 2px solid var(--priColor);
+}
+
+.grid-link {
     text-decoration: none;
-    color: black;
+    color: var(--priColor);
     text-align: center;
+}
+
+h2.grid-title {
+    font-family: Merisca, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-size: 1rem;
+    margin: 0;
+}
+
+p.grid-price {
+    color: var(--priColor);
 }

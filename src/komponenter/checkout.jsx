@@ -6,43 +6,50 @@ import { Link } from 'react-router-dom';
 
 const Checkout = () => {
 
-    const {addToCart, removeFromCart, deleteFromCart, cart, cartProducts, cartSum, shippingCost, totalCost} = useContext(ProductContext);
+    const {addToCart, removeFromCart, deleteFromCart, cart, cartProducts, cartSum, shippingCost, totalCost, deleteCart} = useContext(ProductContext);
 
     return (
         <>
-          <section>
-              <h2>Checkout</h2>
+          <section className='main-flex checkout'>
+              <h2 className='text-color checkout-header'>Checkout</h2>
                  {cartProducts.length === 0 ?
-                 <p>Your Cart is empty</p> :
+                 <>
+                    <p className='text-color'>Your Cart is empty</p>
+                    <Link to='/projekt-react-webshop' className=''><button className="main-button">Back to shopping!</button></Link>
+                 </> :
                  <div>
-                    <section className="checkout-products checkout-section">
-                        <h3 id="shopping-title">You are ordering the following:</h3>
-                        <ul id="shopping-list">
+                    <section className="checkout-products checkout-section main-div">
+                        <h3 className='text-color' id="shopping-title text-color">You are ordering the following:</h3>
+                        <table className="cart-table">
                         {cartProducts.map((product) => (
-                            <li key={product.id} product={product} quantity={cart[product.id]}>
-                            <img width="20" height="20" src={product.thumbnail} alt='product' /> - 
-                            Item: {product.title} - Price: {product.price} - Qty: {cart[product.id]} 
-                            - Sum: {(product.price*cart[product.id]).toFixed(2)} kr
-                            <button onClick={() => removeFromCart(product.id)}> - </button>
-                            <button onClick={() => addToCart(product.id)}
-                              disabled={product.stock < 1 || cart[product.id] >= product.stock}> + 
+                            <tr key={product.id} product={product} quantity={cart[product.id]} className="cart-product">
+                            <td><img width="20" height="20" src={product.thumbnail} alt='product' /></td>
+                            <td className='text-color'>{product.title}</td><td className='text-color'>Price: {product.price}</td><td className='text-color'>Qty: {cart[product.id]}</td>
+                            <td className='text-color'>Sum: {(product.price*cart[product.id]).toFixed(2)} kr</td> 
+                            <td><button onClick={() => removeFromCart(product.id)} className="cart-button cart-left"> - </button>
+                            <button onClick={() => addToCart(product.id)} className="cart-button"
+                                disabled={product.stock < 1 || cart[product.id] >= product.stock}> + 
                             </button>
-                            <button onClick={() => deleteFromCart(product.id)}> & </button>
-                          </li>
+                            <button onClick={() => deleteFromCart(product.id)} className="cart-button"> & </button></td>
+                            </tr>
                         ))}
-                            <li>
+                            <tr className="cart-product">
+                            <td colSpan="2" className='text-color'>
                                 Order cost: {cartSum(cartProducts)} kr
-                            </li>
-                            <li>
+                            </td>
+                            <td colSpan="3" className='text-color'>
                                 Shipping cost: {shippingCost} kr
-                            </li>
-                            <li>
-                                Total cost: {totalCost} kr
-                            </li>
-                        </ul>
+                            </td>
+                            <td colSpan="3" className='text-color'>
+                                Total cost: {totalCost.toFixed(2)} kr
+                            </td>
+                            </tr>
+                        </table>
+                        <Link to="/projekt-react-webshop"><button className='cart-button main-button'>Continue shopping</button></Link>
+                        <button onClick={() => deleteCart()} className='cart-button main-button'>Delete everything</button>
                     </section>
                     <section class="payment checkout-section">
-                        <h3>För beställning var vänlig fyll i dina uppgifter nedan:</h3>
+                        <h3 className='text-color'>För beställning var vänlig fyll i dina uppgifter nedan:</h3>
                         <form id="checkout-form">
                             <div>
                                 <label for="fname">Förnamn:</label>
@@ -83,7 +90,7 @@ const Checkout = () => {
                             </div>
                         </form>
                         <div>
-                            <Link to='/cart'><button>Back to cart</button></Link ><Link to='/receipt'><button>Beställ</button></Link >
+                            <Link to='/cart'><button className='main-button checkout-button'>Back to cart</button></Link ><Link to='/receipt'><button onClick={() => deleteCart()} className='main-button checkout-button'>Beställ</button></Link >
                         </div>
                     </section>
                 </div>

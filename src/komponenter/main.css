@@ -1,3 +1,49 @@
 .main {
-    background: linear-gradient(90deg, #111 0%, #eee 5%, #eee 95%, #111 100%); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-image:
+    linear-gradient(90deg, var(--priColor) 0%, var(--secColor) 5%, var(--secColor) 95%, var(--priColor) 100%);
+    min-height: 80vh;
+    padding: 20px 60px;
 }
+
+.main-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-color {
+    color: var(--priColor);
+}
+
+.main-button {
+    background-color: var(--priColor);
+    color: var(--secColor);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.main-button:hover {
+    background-color: var(--Grey);
+    color: var(--priColor);
+    outline: 3px solid var(--priColor);
+}
+
+.main-div {
+    border-radius: 7px;
+    padding: 5px;
+    margin: 5px;
+    background-color: var(--Grey);
+}
+
+
+
+/*background: linear-gradient(90deg, var(--priColor) 0%, var(--secColor) 5%, var(--secColor) 95%, var(--priColor) 100%); */

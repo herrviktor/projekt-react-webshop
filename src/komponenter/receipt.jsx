@@ -1,17 +1,13 @@
-import { useContext} from 'react';
-import { ProductContext } from './product-context';
 import { Link } from 'react-router-dom';
+import './receipt.css';
 
 
 
 const Receipt = () => {
 
-    const { deleteCart } = useContext(ProductContext);
-
-
     return (
-        <div>
-            <p id="receipt-text">
+        <div className="receipt main-flex">
+            <p className="receipt-text text-color">
                 Order made. A receipt has been sent to your email. 
                 Thank you for shopping with us. Hope you will be satisfied
                 with your purchase. If you have any questions or need help 
@@ -19,7 +15,7 @@ const Receipt = () => {
                 happily assist you the best way possible.
             </p>
             <Link to='/projekt-react-webshop'>
-                <button onClick={() => deleteCart()} className='button receipt-button'>Back top shopping</button>
+                <button className='button receipt-button main-button'>Back top shopping</button>
             </Link>
         </div>
     )
