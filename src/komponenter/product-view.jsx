@@ -21,7 +21,8 @@ const ProductView = () => {
           <h1 className="view-title text-color">{product.title}</h1>
           <p className="view-description text-color">{product.description}</p>
           <p className="view-price text-color">Price: {product.price} kr</p>
-          <button onClick={() => addToCart(product.id)} className='main-button' disabled={product.stock < 1 || cart[product.id] >= product.stock}>Add to cart</button>
+          <button className='main-button view-hidden-button'>Add to cart</button>
+          <button onClick={() => addToCart(product.id)} className='main-button view-button' disabled={product.stock < 1 || cart[product.id] >= product.stock}>Add to cart</button>
           <Link to='/Cart' className=''><button className="main-button">View cart: {totalCost.toFixed(2)} kr</button></Link>
           <Link to='/projekt-react-webshop' className=''><button className="main-button">Back to shopping!</button></Link>
         </>

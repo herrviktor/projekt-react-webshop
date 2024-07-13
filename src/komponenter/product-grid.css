@@ -21,6 +21,14 @@ div.grid-item:hover {
     outline: 2px solid var(--priColor);
 }
 
+.grid-view {
+    visibility: hidden;
+}
+
+div.grid-item:hover span {
+    visibility: visible;
+}
+
 .grid-link {
     text-decoration: none;
     color: var(--priColor);

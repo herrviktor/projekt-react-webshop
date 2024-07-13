@@ -24,9 +24,7 @@
 
 .cart-product tr, td {
     border: 1px solid var(--priColor);
-    border-radius: 5px;
     padding: 5px;
-    margin: 5px;
 }
 
 .cart-button {
@@ -41,12 +39,10 @@
     outline: 1px solid var(--priColor);
 }
 
-.cart-left {
-    margin-left: 10px;
-}
+
 
 .cart-change {
     display: flex;
     justify-content: center;
-    border: none;
+    
 }

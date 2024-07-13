@@ -1,5 +1,5 @@
 .header {
-    background: linear-gradient(135deg, var(--secColor), var(--priColor));
+    background: linear-gradient(135deg, var(--secColor) 50%, var(--priColor));
 }
 
 header h1 {

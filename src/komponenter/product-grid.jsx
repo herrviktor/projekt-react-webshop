@@ -13,8 +13,8 @@ const ProductGrid = () => {
           <div className="grid-item">
             <img src={product.thumbnail} alt={product.title} className="grid-image" />
             <h2 className="grid-title text-color">{product.title}</h2>
-            <p className="grid-price text-color">Price: {product.price}</p>
-            <button className="grid-button main-button">View Product</button>
+            <p className="grid-price text-color">Price: {product.price} kr</p>
+            <span className="grid-view">View Product</span>
           </div>
         </Link>
       ))}
