@@ -7,47 +7,48 @@ import { ThemeContext } from './themes';
 const Nav = () => {
 
     const { totalCost, cart } = useContext(ProductContext);
+    
+    // hämtar funktionen changeTheme från färgtemakontextet
     const { changeTheme } = useContext(ThemeContext);
 
-
+    // Lägger ihop alla produkter och summerar dem till ett tal
     const totalItems = Object.values(cart).reduce((sum, quantity) => sum + quantity, 0);
 
-    const handleThemeChange = (newTheme1, newTheme2) => {
-      const root = document.documentElement;
-      root.style.setProperty('--priColor', newTheme1);
-      root.style.setProperty('--secColor', newTheme2);
-      changeTheme(newTheme1, newTheme2);
-  };
+    // Ändrar färgtemat på sidan
+    const handleThemeChange = (newTheme) => {
+        const root = document.documentElement;
+        root.style.setProperty('--priColor', newTheme);
+        changeTheme(newTheme);
+      };
 
     return (
-        <nav className="top-nav">
-            <div className='nav-right'>
-                <Link to="/projekt-react-webshop" className='nav-home link'>
-                    <div className="top-link text-color">Home</div>
+        <nav className="nav">
+            <div className='nav-containers'>
+                {/* Användaren återgår till startsidan när home klickas */}
+                <Link to="/projekt-react-webshop" className='nav-home nav-link'>
+                    <div className="nav-button main-text-color">Home</div>
                 </Link>
                 <div className='nav-splitter'>
                     <span className='nav-color'>Color Theme: </span>
-                    <select className="nav-select" onChange={(e) => {
-                        const [color1, color2] = e.target.value.split(',');
-                        handleThemeChange(color1, color2);
-                    }}>
-                        <option value="#851, #eee" style={{ backgroundColor: '#851' }}>Brown poo</option>
-                        <option value="#518, #eee" style={{ backgroundColor: '#518' }}>Purple Haze</option>
-                        <option value="#111, #eee" style={{ backgroundColor: '#111' }}>Black Death</option>
-                        <option value="#151, #eee" style={{ backgroundColor: '#151' }}>Green Lantern</option>
-                        <option value="#c18, #eee" style={{ backgroundColor: '#c18' }}>Pink Barbie</option>
+                    <select className="nav-select" onChange={(e) => handleThemeChange(e.target.value)}>
+                        <option value="#851" style={{ backgroundColor: '#851' }}>Brown poo</option>
+                        <option value="#518" style={{ backgroundColor: '#518' }}>Purple Haze</option>
+                        <option value="#111" style={{ backgroundColor: '#111' }}>Black Death</option>
+                        <option value="#151" style={{ backgroundColor: '#151' }}>Green Lantern</option>
+                        <option value="#c18" style={{ backgroundColor: '#c18' }}>Pink Barbie</option>
                     </select>
                 </div>
             </div>
-            <div className='nav-right'>
-                <Link to="/cart" className='nav-cart link'>
-                    <div className="checkout text-color">Cart:{totalCost.toFixed(2)} kr
-                    &#x1F6D2;<svg className="logo-mini svg-cart" viewbox="0 0 24 28" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="10" cy="10" r="9"/><text className="logo-text2 nav-svg-text" x="10" y="10" text-anchor="middle" dominantBaseline="central" style={{ fontSize: '15px' }}>{totalItems}</text></svg>
+            <div className='nav-containers'>
+                <Link to="/cart" className='nav-cart nav-link'>
+                    {/* Skriver ut alla produkternas kostnad i kundvagnen med 2 decimaler */}
+                    <div className="checkout main-text-color">Cart:{totalCost.toFixed(2)} kr
+                    &#x1F6D2;<svg className="nav-logo-mini nav-svg" width="1.5rem" height="1.75rem" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="0.625rem" cy="0.625rem" r="0.5625rem" className='cart-circle'/><text className="nav-svg-text"  x="0.625rem" y="0.625rem" text-anchor="middle" dominantBaseline="central" style={{ fontSize: '0.9375rem' }}>{totalItems}</text></svg>
                     </div>
                 </Link>
-                <Link to="/checkout" className='nav-splitter link'>
-                    <div class="top-link text-color">Checkout</div>
+                <Link to="/checkout" className='nav-splitter nav-link'>
+                    <div class="nav-button main-text-color">Checkout</div>
                 </Link>
             </div>
         </nav>

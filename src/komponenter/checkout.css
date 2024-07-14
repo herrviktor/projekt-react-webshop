@@ -1,10 +1,8 @@
-.checkout {
-    flex-direction: column;
-}
+
 
 .checkout-section {
     padding-bottom: 20px;
-    margin-left: 60px;
+    
 }
 
 .checkout-header {
@@ -14,8 +12,12 @@
     text-shadow: 2px 2px 10px var(--priColor);
 }
 
+.checkout-align {
+    text-align: center;
+}
+
 .checkout-input {
-    border: 1px solid var(--priColor);
+    border: 0.065rem solid var(--priColor);
     border-radius: 5px;
     padding: 5px;
     margin: 5px;
@@ -23,10 +25,10 @@
 }
 
 .checkout-input:focus {
-    border: 1px solid var(--Grey);
-    outline: 2px solid var(--Grey);
+    border: 0.065rem solid var(--Grey);
+    outline: 0.135rem solid var(--Grey);
 }
 
-.checkout-button {
-    margin-right: 10px;
+.checkout-error {
+    color: red;
 }

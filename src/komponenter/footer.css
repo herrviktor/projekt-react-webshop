@@ -1,11 +1,10 @@
 .footer {
     display: flex;
     flex-direction: column;
-    align-items: space-between; /* Add this line to center horizontally */
+    align-items: space-between;
     background: linear-gradient(to bottom, var(--priColor), var(--secColor));
-    color: #ddd;
+    color: var(--secColor);
     padding: 7px 10px;
-    font-size: 0.8rem;
   }
 
   .contacts {

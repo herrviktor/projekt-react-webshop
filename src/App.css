@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+html {
+  font-size: 16px;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -34,5 +38,47 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 399px) {
+  html {
+    font-size: 2px;
+  }
+}
+
+@media screen and (min-width: 400px) {
+  html {
+    font-size: 4px;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  html {
+    font-size: 7px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 10px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  html {
+    font-size: 24px;
   }
 }

@@ -1,33 +1,12 @@
-svg.logo-mini {
-    position: relative;
-    left: -9px;
-    top: -6px;
-    width: 20px;
-    height: 20px;
-    stroke-width: 25px;
-}
-
-
-svg.svg-cart {
-    fill: var(--priColor);
-}
-
-
-nav.top-nav {
-    background: radial-gradient(ellipse at center, var(--priColor) 1%, var(--secColor) 25%); 
+.nav {
+    background: radial-gradient(ellipse at center, var(--priColor) 1%, var(--secColor) 15%); 
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 5px;
-    border-radius: 5px;
 }
 
-.nav-left {
-    display: flex;
-    align-items: center;
-}
-
-.nav-right {
+.nav-containers {
     display: flex;
     align-items: center;
 }
@@ -35,7 +14,7 @@ nav.top-nav {
 .nav-home {
     margin-right: 5px;
     font-weight: bold;
-    
+    font-size: 1rem;
 }
 
 .nav-splitter {
@@ -55,34 +34,51 @@ nav.top-nav {
 .nav-select {
     background-color: var(--priColor);
     color: var(--secColor);
-    border: 1px solid var(--secColor);
-    border-radius: 5px;
+    border: 0.06rem solid var(--secColor);
+    border-radius: 7px;
     padding: 2px 5px;
+    font-size: 0.9rem;
 }
 
-div.top-link {
+.nav-button {
     margin-left: 5px;
-    border: 2px solid var(--priColor);
+    border: 0.13rem solid var(--priColor);
     padding: 1px 13px;
-    border-radius: 15px;
+    border-radius: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
 }
 
-div.top-link:hover {
+.nav-button:hover {
     background-color: var(--priColor);
     color: var(--secColor);
 }
 
-.link {
+.nav-link {
     text-decoration: none;
 }
 
 .nav-cart {
     padding-top: 8px;
-    border: 2px solid var(--secColor);
+    border: 0.13rem solid var(--secColor);
+    font-size: 1rem;
 }
 
 .nav-cart:hover {
-    border: 2px solid var(--priColor);
+    border: 0.13rem solid var(--priColor);
+}
+
+.nav-svg {
+    fill: var(--priColor);
+}
+
+.nav-logo-mini {
+    position: relative;
+    left: -0.615rem;
+    top: -0.42rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    stroke-width: 25px;
 }
 
 .nav-svg-text {

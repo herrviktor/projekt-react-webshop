@@ -1,10 +1,14 @@
+.grid-products {
+    width: 100%;
+}
+
 .grid-image {
     width: 80%;
     height: auto;
 }
 
-div.grid-item {
-    border: 1px solid var(--priColor);
+.grid-item {
+    border: 0.065rem solid var(--priColor);
     border-radius: 5px;
     padding: 10px;
     margin: 10px;
@@ -12,20 +16,20 @@ div.grid-item {
     background-color: #ddd;
 }
 
-div.grid-item:hover {
+.grid-item:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     transform: scale(1.05);
     transition: all 0.3s ease;
     cursor: pointer;
     background-color: #bbb;
-    outline: 2px solid var(--priColor);
+    outline: 0.13rem solid var(--priColor);
 }
 
 .grid-view {
     visibility: hidden;
 }
 
-div.grid-item:hover span {
+.grid-item:hover span {
     visibility: visible;
 }
 
@@ -35,13 +39,13 @@ div.grid-item:hover span {
     text-align: center;
 }
 
-h2.grid-title {
+.grid-title {
     font-family: Merisca, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align: center;
     font-size: 1rem;
     margin: 0;
 }
 
-p.grid-price {
+.grid-price {
     color: var(--priColor);
 }
