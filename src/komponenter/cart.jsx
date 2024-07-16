@@ -25,11 +25,11 @@ return (
               <td className='main-text-color'>Sum: {(product.price*cart[product.id]).toFixed(2)} kr</td> 
               <td className='main-cart-change'>
                 {/* Knappar för att lägga till, ta bort eller radera produkter från kundvagnen */}
-                <button onClick={() => addToCart(product.id)} className="main-cart-button"
+                <button onClick={() => addToCart(product.id)} className="main-cart-button cart-button"
                   disabled={product.stock < 1 || cart[product.id] >= product.stock}> + 
                 </button>
-                <button onClick={() => removeFromCart(product.id)} className="main-cart-button main-cart-left"> - </button>
-                <button onClick={() => deleteFromCart(product.id)} className="main-cart-button"> &#128465; </button></td>
+                <button onClick={() => removeFromCart(product.id)} className="main-cart-button main-cart-left cart-button"> - </button>
+                <button onClick={() => deleteFromCart(product.id)} className="main-cart-button cart-button"> &#128465; </button></td>
             </tr>
       ))}
              {/* Rad som visar orderkostnad, fraktkostnad och total kostnad */}

@@ -1,15 +1,15 @@
 
 
 .checkout-section {
-    padding-bottom: 20px;
-    
+    padding-bottom: 1.25rem;
+    font-size: 1rem;
 }
 
 .checkout-header {
     font-family: Merisca, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 1.5rem;
     color: var(--priColor);
-    text-shadow: 2px 2px 10px var(--priColor);
+    text-shadow: 0.125rem 0.125rem 0.625rem var(--priColor);
 }
 
 .checkout-align {
@@ -18,15 +18,16 @@
 
 .checkout-input {
     border: 0.065rem solid var(--priColor);
-    border-radius: 5px;
-    padding: 5px;
-    margin: 5px;
+    border-radius: 0.3125rem;
+    padding: 0.3125rem;
+    margin: 0.3125rem;
     background-color: var(--secColor);
+    font-size: 1rem;
 }
 
 .checkout-input:focus {
-    border: 0.065rem solid var(--Grey);
-    outline: 0.135rem solid var(--Grey);
+    border: 0.0625rem solid var(--Grey);
+    outline: 0.125rem solid var(--Grey);
 }
 
 .checkout-error {

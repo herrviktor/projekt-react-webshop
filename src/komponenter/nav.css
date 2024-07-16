@@ -2,24 +2,24 @@
     background: radial-gradient(ellipse at center, var(--priColor) 1%, var(--secColor) 15%); 
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 15px 5px;
+    align-items: baseline;
+    padding: 0.9375rem 0.3125rem;
 }
 
 .nav-containers {
     display: flex;
-    align-items: center;
+    align-items: baseline;
 }
 
 .nav-home {
-    margin-right: 5px;
+    margin-right: 0.3125rem;
     font-weight: bold;
     font-size: 1rem;
 }
 
 .nav-splitter {
-    border-left: 1px solid var(--priColor);
-    padding-left: 5px;
+    border-right: 0.0625rem solid var(--priColor);
+    padding-right: 0.3125rem;
 }
 
 .nav-color {
@@ -27,23 +27,23 @@
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: bold;
 }
 
 .nav-select {
     background-color: var(--priColor);
     color: var(--secColor);
-    border: 0.06rem solid var(--secColor);
-    border-radius: 7px;
-    padding: 2px 5px;
+    outline: 0.06rem solid var(--secColor);
+    border-radius: 0.4375rem;
+    padding: 0.125rem 0.3125rem;
     font-size: 0.9rem;
 }
 
 .nav-button {
-    margin-left: 5px;
+    margin-left: 0.3125rem;
     border: 0.13rem solid var(--priColor);
-    padding: 1px 13px;
+    padding: 0.0625rem 0.8125rem;
     border-radius: 1rem;
     font-size: 1rem;
     font-weight: bold;
@@ -59,7 +59,7 @@
 }
 
 .nav-cart {
-    padding-top: 8px;
+    padding-top: 0.5rem;
     border: 0.13rem solid var(--secColor);
     font-size: 1rem;
 }
@@ -78,7 +78,7 @@
     top: -0.42rem;
     width: 1.2rem;
     height: 1.2rem;
-    stroke-width: 25px;
+    stroke-width: 1.5625rem;
 }
 
 .nav-svg-text {

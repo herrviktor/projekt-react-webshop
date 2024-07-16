@@ -25,10 +25,10 @@ const Nav = () => {
         <nav className="nav">
             <div className='nav-containers'>
                 {/* Användaren återgår till startsidan när home klickas */}
-                <Link to="/projekt-react-webshop" className='nav-home nav-link'>
-                    <div className="nav-button main-text-color">Home</div>
+                <Link to="/projekt-react-webshop" className='nav-home nav-link nav-splitter'>
+                    <div className="nav-button main-text-color nav-splitter">Home</div>
                 </Link>
-                <div className='nav-splitter'>
+                <div>
                     <span className='nav-color'>Color Theme: </span>
                     <select className="nav-select" onChange={(e) => handleThemeChange(e.target.value)}>
                         <option value="#851" style={{ backgroundColor: '#851' }}>Brown poo</option>
@@ -42,7 +42,7 @@ const Nav = () => {
             <div className='nav-containers'>
                 <Link to="/cart" className='nav-cart nav-link'>
                     {/* Skriver ut alla produkternas kostnad i kundvagnen med 2 decimaler */}
-                    <div className="checkout main-text-color">Cart:{totalCost.toFixed(2)} kr
+                    <div className="checkout main-text-color nav-splitter">Cart:{totalCost.toFixed(2)} kr
                     &#x1F6D2;<svg className="nav-logo-mini nav-svg" width="1.5rem" height="1.75rem" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="0.625rem" cy="0.625rem" r="0.5625rem" className='cart-circle'/><text className="nav-svg-text"  x="0.625rem" y="0.625rem" text-anchor="middle" dominantBaseline="central" style={{ fontSize: '0.9375rem' }}>{totalItems}</text></svg>
                     </div>

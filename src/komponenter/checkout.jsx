@@ -158,11 +158,11 @@ const Checkout = () => {
                                 <td className='main-text-color'>Qty: {cart[product.id]}</td>
                                 <td className='main-text-color'>Sum: {(product.price*cart[product.id]).toFixed(2)} kr</td> 
                                 <td className='main-cart-change'>
-                                    <button onClick={() => removeFromCart(product.id)} className="main-cart-button main-cart-left"> - </button>
-                                    <button onClick={() => addToCart(product.id)} className="main-cart-button"
+                                    <button onClick={() => removeFromCart(product.id)} className="main-cart-button main-cart-left cart-button"> - </button>
+                                    <button onClick={() => addToCart(product.id)} className="main-cart-button cart-button"
                                         disabled={product.stock < 1 || cart[product.id] >= product.stock}> + 
                                     </button>
-                                    <button onClick={() => deleteFromCart(product.id)} className="main-cart-button"> &#128465; </button>
+                                    <button onClick={() => deleteFromCart(product.id)} className="main-cart-button cart-button"> &#128465; </button>
                                 </td>
                             </tr>
                         ))}
@@ -192,7 +192,7 @@ const Checkout = () => {
                     </section>
                     <section class="checkout-section">
                         <h3 className='main-text-color'>To place an order, please fill in your details below:</h3>
-                        <form onSubmit={handleSubmit}>
+                        <form onSubmit={handleSubmit} className="checkout-form">
                             <div>
                                 <label className="main-text-color" for="fname">Firstname:</label>
                                 <input 
@@ -276,7 +276,7 @@ const Checkout = () => {
                                 />
                                 {errors.phone && <span className="checkout-error">{errors.phone}</span>}
                             </div>
-                            <div>
+                            <div className="checkout-info">
                                 <label className="main-text-color" for="email">E-mail:</label>
                                 <input 
                                     className="checkout-input main-text-color" 
