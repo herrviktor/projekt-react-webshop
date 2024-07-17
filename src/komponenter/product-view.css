@@ -9,3 +9,19 @@
     height: auto;
 }
 
+@media screen and (max-width: 768px) {
+    .view-button {
+        font-size: 1.7rem;
+        border-radius: 0.625rem;
+      }
+    .view-product {
+        width: 75%;
+        font-size: 2rem;
+      }
+  }
+
+ 
+
+
+  
+

@@ -84,3 +84,20 @@
 .nav-svg-text {
     fill: var(--secColor);
 }
+
+@media  screen and (max-width: 768px) {
+    .nav {
+        justify-content: space-around;
+        background-image: radial-gradient(ellipse at center, var(--priColor) 0, var(--secColor) 0, var(--secColor) 70%, var(--priColor) 100%);
+    }
+
+   
+
+    .nav-size {
+        font-size: 1.8rem;
+    } 
+
+    .nav-button {
+        border-radius: 1.5rem;
+    }
+}

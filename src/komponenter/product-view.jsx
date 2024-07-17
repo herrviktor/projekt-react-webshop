@@ -25,16 +25,16 @@ const ProductView = () => {
           <p className="main-text-color">{product.description}</p>
           <p className="main-text-color">Price: {product.price} kr</p>
           {/* Knapp för att lägga till produkt i kundvagnen, inaktiveras om produkten är slut i lager */}
-          <button onClick={() => addToCart(product.id)} className='main-button' 
+          <button onClick={() => addToCart(product.id)} className='main-button view-button' 
             disabled={product.stock < 1 || cart[product.id] >= product.stock}>Add to cart
           </button>
           {/* Länk till kundvagnen med den totala kostnaden i 2 decimaler */}
           <Link to='/Cart' className=''>
-            <button className="main-button">View cart: {totalCost.toFixed(2)} kr</button>
+            <button className="main-button view-button">View cart: {totalCost.toFixed(2)} kr</button>
           </Link>
           {/* Länk tillbaka till huvudsidan */}
           <Link to='/projekt-react-webshop' className=''>
-            <button className="main-button">Back to shopping!</button>
+            <button className="main-button view-button">Back to shopping!</button>
           </Link>
         </>
       ) : (
