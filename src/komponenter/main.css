@@ -92,5 +92,10 @@
 
 .main-cart-change {
     text-align: center;
-    
+}
+
+@media screen and (max-width: 767px) {
+    .main {
+        justify-content: flex-start;
+    }
 }

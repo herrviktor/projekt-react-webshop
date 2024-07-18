@@ -1,8 +1,5 @@
 .grid-products {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    
+    width: 95%;
 }
 
 .grid-image {
@@ -17,8 +14,7 @@
     margin: 0.625rem;
     box-shadow: 0 0 0.3125rem rgba(0, 0, 0, 0.2);
     background-color: #ddd;
-    flex-grow: 0;
-    flex-shrink: 0;
+    max-width: 100%;
 }
 
 .grid-item:hover {
@@ -47,7 +43,6 @@
 .grid-title {
     font-family: Merisca, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align: center;
-    font-size: 1rem;
     margin: 0;
 }
 

@@ -85,7 +85,7 @@
     fill: var(--secColor);
 }
 
-@media  screen and (max-width: 768px) {
+@media  screen and (max-width: 991px) {
     .nav {
         justify-content: space-around;
         background-image: radial-gradient(ellipse at center, var(--priColor) 0, var(--secColor) 0, var(--secColor) 70%, var(--priColor) 100%);
